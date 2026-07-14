@@ -6,8 +6,11 @@ export default async function Home() {
     .from("job_applications")
     .select("*");
 
-  console.log(data);
-  console.log(error);
+  if (error) {
+    console.error("Supabase Error:", error);
+  } else {
+    console.log("Job Applications:", data);
+  }
 
   return (
     <>
